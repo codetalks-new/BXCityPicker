@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k7o-gP-Acd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BXCityPicker_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,57 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM7-pU-ckV">
+                                <rect key="frame" x="270" y="285" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.95452964469178081" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="选择城市"/>
+                                <connections>
+                                    <action selector="pickCity:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WLl-cy-Y4K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择结果:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoZ-kF-JGg">
+                                <rect key="frame" x="263.5" y="256.5" width="73" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KoZ-kF-JGg" firstAttribute="centerX" secondItem="KM7-pU-ckV" secondAttribute="centerX" id="1Eb-YF-fAD"/>
+                            <constraint firstItem="KM7-pU-ckV" firstAttribute="top" secondItem="KoZ-kF-JGg" secondAttribute="bottom" constant="8" id="8Xm-7J-1tu"/>
+                            <constraint firstItem="KoZ-kF-JGg" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Atd-1x-ScN"/>
+                            <constraint firstItem="KM7-pU-ckV" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="SSH-e9-3vw"/>
+                            <constraint firstItem="KM7-pU-ckV" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="WeU-yx-bZu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sgK-ly-Lqg"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="KoZ-kF-JGg" id="aA1-Qa-JVf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="941" y="1090"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M1n-D1-J4H">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k7o-gP-Acd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="34p-p6-M5o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="1Cw-4l-gtf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnY-OW-Uo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="370"/>
         </scene>
     </scenes>
 </document>

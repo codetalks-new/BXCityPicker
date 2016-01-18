@@ -1,11 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'BXCityPicker_Example', :exclusive => true do
+target 'BXCityPicker_Example' do
   pod "BXCityPicker", :path => "../"
+  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 end
 
-target 'BXCityPicker_Tests', :exclusive => true do
+target 'BXCityPicker_Tests' do
   pod "BXCityPicker", :path => "../"
 
   

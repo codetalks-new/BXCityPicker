@@ -1,0 +1,6 @@
+framework module BXCityPicker {
+  umbrella header "BXCityPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

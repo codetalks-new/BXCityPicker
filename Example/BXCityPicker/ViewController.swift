@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import SwiftyJSON
+import BXCityPicker
+
+
+
+extension City:BXCity{
+}
+
+extension Province:BXProvince{
+  typealias CityType = City
+  func cityList() -> [City]{
+    return self.city
+  }
+
+}
 
 class ViewController: UIViewController {
+  @IBOutlet weak var resultLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,5 +36,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+  @IBAction func pickCity(sender: AnyObject) {
+    let provinces = readRegion()
+    let vc = BXCityPickerController<Province,City>()
+    vc.updateProvinces(provinces)
+    showViewController(vc, sender: self)
+  }
+  
+  
+  func readRegion() -> [Province]{
+    let path = NSBundle.mainBundle().pathForResource("region", ofType: "json")
+    let content = try? String(contentsOfFile: path!)
+    let json = JSON.parse(content!)
+    return Province.arrayFrom(json["data"])
+  }
 }
 
