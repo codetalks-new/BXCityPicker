@@ -63,7 +63,7 @@ public class BXCityPickerController<P:BXProvince,C:BXCity> : UIViewController,UI
     self.init(nibName:nil,bundle:nil)
   }
   // must needed for iOS 8
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+  public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   var allOutlets :[UIView]{
