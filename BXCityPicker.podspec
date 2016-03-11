@@ -20,11 +20,11 @@ Pod::Spec.new do |s|
 BXCityPicker is powerfull City Picker for China with Custom Province,City,Distinct Support
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/BXCityPicker"
+  s.homepage         = "https://github.com/banxi1988/BXCityPicker"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "banxi1988" => "banxi1988@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/BXCityPicker.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/banxi1988/BXCityPicker.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
