@@ -13,7 +13,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 import BXModel
-import PinAutoLayout
+import PinAuto
 
 // -ProvinceSectionHeaderView(m=BXProvince):cc
 // name[l15,y](f15,cdt)
@@ -57,8 +57,8 @@ class ProvinceSectionHeaderView: UICollectionViewCell,BXBindable {
   }
   
   func installConstaints(){
-    nameLabel.pinCenterY()
-    nameLabel.pinLeading(15)
+    nameLabel.pa_centerY.install()
+    nameLabel.pa_leading.eq(15).install()
     
   }
   

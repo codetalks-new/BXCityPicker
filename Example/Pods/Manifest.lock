@@ -1,28 +1,25 @@
 PODS:
-  - BXCityPicker (0.1.0):
+  - BXCityPicker (0.1.2):
     - BXModel
-    - PinAutoLayout
-  - BXModel (0.1.0):
+    - PinAuto
+  - BXModel (0.2.3):
     - SwiftyJSON
-  - PinAutoLayout (1.1.0)
-  - Reveal-iOS-SDK (1.6.2)
+  - PinAuto (1.6)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - BXCityPicker (from `../`)
-  - Reveal-iOS-SDK
 
 EXTERNAL SOURCES:
   BXCityPicker:
     :path: ../
 
 SPEC CHECKSUMS:
-  BXCityPicker: 6a1eb4c0b1f5843e7decbac002e78905a7aa4363
-  BXModel: cafda844bd7cd91f11767a57df17eec502b4dfa9
-  PinAutoLayout: 9d0863eed45d1d6277aa663c8a32b77b03a16bf1
-  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
+  BXCityPicker: 442db7878c22b7a219d3a7186fe44e02fb7cdd49
+  BXModel: 7b107003f758feea4f5634b89869f085e6a015cc
+  PinAuto: 3fea106a06036fedf49928e65a1bced151c02f8a
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: c36f8ea6614223486099f8df1fcdaf5612fae639
+PODFILE CHECKSUM: 10262dc7d7bee0aefa7cc4055b5b0ef87ab2e6e6
 
-COCOAPODS: 1.0.0.beta.2
+COCOAPODS: 1.0.0.beta.7

@@ -13,7 +13,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 import BXModel
-import PinAutoLayout
+import PinAuto
 
 // -OtherCityHeaderView:v
 // title[l15,y](f15,cdt)
@@ -54,9 +54,9 @@ public class OtherCityHeaderView : UIView{
   }
   
   func installConstaints(){
-    titleLabel.pinCenterY()
-    titleLabel.pinLeading(15)
-    titleLabel.pinTrailing()
+    titleLabel.pa_centerY.install()
+    titleLabel.pa_leading.eq(15).install()
+    titleLabel.pa_trailing.eq(15).install()
     
   }
   

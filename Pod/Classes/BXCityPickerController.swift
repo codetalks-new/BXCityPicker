@@ -14,7 +14,7 @@ import CoreLocation
 import UIKit
 import SwiftyJSON
 import BXModel
-import PinAutoLayout
+import PinAuto
 // -BXCityPickerController:vc
 // _[hor0,t0,h44]:sb
 // currentCity[hor0,t0,h44]:v
@@ -92,21 +92,21 @@ public class BXCityPickerController<P:BXProvince,C:BXCity> : UIViewController,UI
   }
   
   func installConstaints(){
-    searchBar.pinHeight(44)
-    searchBar.pinHorizontal(0)
-    pinTopLayoutGuide(searchBar,margin:0)
+    searchBar.pa_height.eq(44).install()
+    searchBar.pac_horizontal(0)
+    searchBar.pa_below(topLayoutGuide, offset: 0).install()
+   
+    currentCityHeader.pa_height.eq(36).install()
+    currentCityHeader.pac_horizontal(0)
+    currentCityHeader.pa_below(searchBar, offset: 0).install()
     
-    currentCityHeader.pinHeight(36)
-    currentCityHeader.pinHorizontal(0)
-    currentCityHeader.pinBelowSibling(searchBar, margin: 0)
+    otherCityHeader.pa_height.eq(36).install()
+    otherCityHeader.pac_horizontal(0)
+    otherCityHeader.pa_below(currentCityHeader, offset: 0).install()
     
-    otherCityHeader.pinHeight(36)
-    otherCityHeader.pinHorizontal(0)
-    otherCityHeader.pinBelowSibling(currentCityHeader, margin: 0)
-    
-    collectionView.pinHorizontal(0)
-    collectionView.pinBelowSibling(otherCityHeader, margin: 0)
-    pinBottomLayoutGuide(collectionView,margin:0)
+    collectionView.pac_horizontal(0)
+    collectionView.pa_below(otherCityHeader, offset: 0).install()
+    collectionView.pa_above(topLayoutGuide, offset: 0).install()
   }
   
   func setupAttrs(){
@@ -140,12 +140,12 @@ public class BXCityPickerController<P:BXProvince,C:BXCity> : UIViewController,UI
   }
   
   lazy var selectDoneButton : UIBarButtonItem = {
-    let item = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "selectDone:")
+    let item = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(selectDone(_:)))
     return item
   }()
   
   lazy var cancelButton : UIBarButtonItem = {
-    let item = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "cancel:")
+    let item = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancel(_:)))
     return item
   }()
   
@@ -275,7 +275,7 @@ public class BXCityPickerController<P:BXProvince,C:BXCity> : UIViewController,UI
   
    // MARK:  UI UISearchControllerDelegate
   public func presentSearchController(searchController: UISearchController) {
-    NSLog("\(__FUNCTION__)")
+    NSLog("\(#function)")
     presentViewController(searchController, animated: true, completion: nil)
   }
   
@@ -283,7 +283,7 @@ public class BXCityPickerController<P:BXProvince,C:BXCity> : UIViewController,UI
   // MARK: UISearchResultsUpdating
   public func updateSearchResultsForSearchController(searchController: UISearchController) {
     let text = searchController.searchBar.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) ?? ""
-    NSLog("\(__FUNCTION__) \(text)")
+    NSLog("\(#function) \(text)")
     if text.isEmpty{
       searchResultsController.updateItems([])
     }else{
@@ -304,7 +304,7 @@ public class BXCityPickerController<P:BXProvince,C:BXCity> : UIViewController,UI
   
   public func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     let recentLocation = locations.last!
-    NSLog("\(__FUNCTION__) recentLocation is \(recentLocation)")
+    NSLog("\(#function) recentLocation is \(recentLocation)")
     //    if recentLocation.horizontalAccuracy < 0 {
     //      transitionToState(.LocateFailed)
     //      // test that the horizontal accuracy does not indicate an invalid measurement
@@ -320,13 +320,13 @@ public class BXCityPickerController<P:BXProvince,C:BXCity> : UIViewController,UI
   }
   
   public func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-    NSLog("\(__FUNCTION__) \(error)")
+    NSLog("\(#function) \(error)")
     stopRequestLocation()
     transitionToState(.LocateFailed)
   }
   
   public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-    NSLog("\(__FUNCTION__) status:\(status)")
+    NSLog("\(#function) status:\(status)")
   }
 
 }

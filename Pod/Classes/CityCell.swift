@@ -57,7 +57,7 @@ public class CityCell : UICollectionViewCell,BXBindable {
   }
   
   func installConstaints(){
-    nameLabel.pinEdge(UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2))
+    nameLabel.pac_edge(UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2))
     
   }
   

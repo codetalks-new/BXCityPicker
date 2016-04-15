@@ -10,7 +10,7 @@ import Foundation
 
 
 public protocol BXProvince:class{
-  typealias CityType
+  associatedtype CityType
   var name:String{ get }
   func cityList() -> [CityType]
 }

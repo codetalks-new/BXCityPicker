@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "BXCityPicker"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "BXCityPicker is City Picker for China"
 
 # This description is used to generate tags and improve search results.
@@ -31,12 +31,9 @@ BXCityPicker is powerfull City Picker for China with Custom Province,City,Distin
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'BXCityPicker' => ['Pod/Assets/*.png']
-  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'CoreLocation'
- s.dependency 'PinAutoLayout'
+ s.dependency 'PinAuto'
  s.dependency 'BXModel'
 end

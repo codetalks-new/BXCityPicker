@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E2FBE5CD31C37A38537FB0BD'
+               BlueprintIdentifier = '9F56A039335ED0DE7993A94A61F5A126'
                BlueprintName = 'BXCityPicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'BXCityPicker.framework'>

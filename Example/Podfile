@@ -3,7 +3,7 @@ use_frameworks!
 
 target 'BXCityPicker_Example' do
   pod "BXCityPicker", :path => "../"
-  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+#  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 end
 
 target 'BXCityPicker_Tests' do
