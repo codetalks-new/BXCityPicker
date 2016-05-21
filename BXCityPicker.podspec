@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "BXCityPicker"
-  s.version          = "0.1.2"
+  s.version          = "0.1.3"
   s.summary          = "BXCityPicker is City Picker for China"
 
 # This description is used to generate tags and improve search results.

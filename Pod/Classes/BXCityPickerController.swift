@@ -106,7 +106,7 @@ public class BXCityPickerController<P:BXProvince,C:BXCity> : UIViewController,UI
     
     collectionView.pac_horizontal(0)
     collectionView.pa_below(otherCityHeader, offset: 0).install()
-    collectionView.pa_above(topLayoutGuide, offset: 0).install()
+    collectionView.pa_above(bottomLayoutGuide, offset: 0).install()
   }
   
   func setupAttrs(){
