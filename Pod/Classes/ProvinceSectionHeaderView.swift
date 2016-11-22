@@ -19,7 +19,7 @@ import PinAuto
 // name[l15,y](f15,cdt)
 
 class ProvinceSectionHeaderView: UICollectionViewCell,BXBindable {
-  let nameLabel = UILabel(frame:CGRectZero)
+  let nameLabel = UILabel(frame:CGRect.zero)
   
   
   override init(frame: CGRect) {
@@ -27,7 +27,7 @@ class ProvinceSectionHeaderView: UICollectionViewCell,BXBindable {
     commonInit()
   }
   
-  func bind(item:String){
+  func bind(_ item:String){
     nameLabel.text  =  item
   }
   
@@ -63,8 +63,8 @@ class ProvinceSectionHeaderView: UICollectionViewCell,BXBindable {
   }
   
   func setupAttrs(){
-    nameLabel.textColor = UIColor.darkTextColor()
-    nameLabel.font = UIFont.systemFontOfSize(15)
+    nameLabel.textColor = UIColor.darkText
+    nameLabel.font = UIFont.systemFont(ofSize: 15)
     backgroundColor = UIColor(white: 0.912, alpha: 1.0)
   }
 }

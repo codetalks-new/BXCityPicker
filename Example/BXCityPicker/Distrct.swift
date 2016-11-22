@@ -22,8 +22,8 @@ class Distrct:BXModel {
     self.name = json["name"].stringValue
     }
 
-    func toDict() -> [String:AnyObject]{
-      var dict : [String:AnyObject] = [ : ]
+    func toDict() -> [String:Any]{
+      var dict : [String:Any] = [ : ]
          dict["id"] = self.id
    dict["name"] = self.name
       return dict

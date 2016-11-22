@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "BXCityPicker"
-  s.version          = "0.1.3"
-  s.summary          = "BXCityPicker is City Picker for China"
+  s.version          = "1.0.0"
+  s.summary          = "BXCityPicker is City Picker for China, support Swift 3"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -29,11 +29,14 @@ BXCityPicker is powerfull City Picker for China with Custom Province,City,Distin
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-
+  s.resource_bundles = {
+    'BXCityPicker' => ['Pod/Assets/*.json']
+  }
   s.source_files = 'Pod/Classes/**/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'CoreLocation'
- s.dependency 'PinAuto'
- s.dependency 'BXModel'
+ s.dependency 'PinAuto', '~> 2.0'
+ s.dependency 'BXModel', "~> 1.1"
+ s.dependency 'BXForm', "~> 1.0"
 end

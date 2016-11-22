@@ -1,7 +1,7 @@
 {
   "name": "BXCityPicker",
-  "version": "0.1.2",
-  "summary": "BXCityPicker is City Picker for China",
+  "version": "1.0.0",
+  "summary": "BXCityPicker is City Picker for China, support Swift 3",
   "description": "BXCityPicker is powerfull City Picker for China with Custom Province,City,Distinct Support",
   "homepage": "https://github.com/banxi1988/BXCityPicker",
   "license": "MIT",
@@ -10,12 +10,17 @@
   },
   "source": {
     "git": "https://github.com/banxi1988/BXCityPicker.git",
-    "tag": "0.1.2"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
+  "resource_bundles": {
+    "BXCityPicker": [
+      "Pod/Assets/*.json"
+    ]
+  },
   "source_files": "Pod/Classes/**/*",
   "frameworks": [
     "UIKit",
@@ -23,10 +28,13 @@
   ],
   "dependencies": {
     "PinAuto": [
-
+      "~> 2.0"
     ],
     "BXModel": [
-
+      "~> 1.1"
+    ],
+    "BXForm": [
+      "~> 1.0"
     ]
   }
 }

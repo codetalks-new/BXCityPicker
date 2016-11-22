@@ -18,8 +18,8 @@ import PinAuto
 // -OtherCityHeaderView:v
 // title[l15,y](f15,cdt)
 
-public class OtherCityHeaderView : UIView{
-  public let titleLabel = UILabel(frame:CGRectZero)
+open class OtherCityHeaderView : UIView{
+  open let titleLabel = UILabel(frame:CGRect.zero)
   
   
   override init(frame: CGRect) {
@@ -28,7 +28,7 @@ public class OtherCityHeaderView : UIView{
   }
   
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     commonInit()
   }
@@ -62,7 +62,7 @@ public class OtherCityHeaderView : UIView{
   
   func setupAttrs(){
     titleLabel.textColor = UIColor(white: 0.4, alpha: 1.0)
-    titleLabel.font = UIFont.systemFontOfSize(15)
+    titleLabel.font = UIFont.systemFont(ofSize: 15)
     
     titleLabel.text = "其他城市"
   }

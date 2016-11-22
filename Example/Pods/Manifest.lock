@@ -1,11 +1,21 @@
 PODS:
-  - BXCityPicker (0.1.2):
-    - BXModel
-    - PinAuto
-  - BXModel (0.2.3):
-    - SwiftyJSON
-  - PinAuto (1.6)
-  - SwiftyJSON (2.3.2)
+  - BXCityPicker (1.0.0):
+    - BXForm (~> 1.0)
+    - BXModel (~> 1.1)
+    - PinAuto (~> 2.0)
+  - BXForm (1.0.0):
+    - BXiOSUtils (~> 1.0)
+    - BXModel (~> 1.0)
+    - Cent (~> 6.0)
+    - PinAuto (~> 2.0)
+  - BXiOSUtils (1.0.0)
+  - BXModel (1.1.0):
+    - SwiftyJSON (~> 3.1.1)
+  - Cent (6.0.3):
+    - Dollar (~> 6.1.0)
+  - Dollar (6.1.0)
+  - PinAuto (2.0)
+  - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
   - BXCityPicker (from `../`)
@@ -15,11 +25,15 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  BXCityPicker: 442db7878c22b7a219d3a7186fe44e02fb7cdd49
-  BXModel: 7b107003f758feea4f5634b89869f085e6a015cc
-  PinAuto: 3fea106a06036fedf49928e65a1bced151c02f8a
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  BXCityPicker: 8cac4e842cf1c83e2205aaf1c001ec500a6457c0
+  BXForm: 19fbe8429769a9e4924963cbd33ea32980e0012e
+  BXiOSUtils: 7218b6016948a53abe4efe05b845ea94c4da566e
+  BXModel: 9fdfa0e21292e47f553ee492d4164e8d545e86cb
+  Cent: 2e2deb7ced0fc6c4c320075ddd4f63ed8defd8db
+  Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
+  PinAuto: c17b09abc2710d60f523f397890bca0572d489e3
+  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 10262dc7d7bee0aefa7cc4055b5b0ef87ab2e6e6
+PODFILE CHECKSUM: c656a0c999d0526c8474d4cc6e2da6697c838633
 
-COCOAPODS: 1.0.0.beta.7
+COCOAPODS: 1.2.0.beta.1

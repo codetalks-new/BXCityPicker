@@ -10,7 +10,7 @@ import UIKit
 import BXModel
 
 class SearchResultCell:UITableViewCell,BXBindable{
-  func bind(item: BXCity) {
+  func bind(_ item: BXCity) {
     textLabel?.text = item.name
   }
 }

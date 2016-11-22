@@ -9,6 +9,6 @@
 import Foundation
 
 
-public protocol BXCity:class{
+public protocol BXCity {
   var name:String{ get }
 }

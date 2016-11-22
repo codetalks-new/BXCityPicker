@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k7o-gP-Acd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k7o-gP-Acd">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,37 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM7-pU-ckV">
-                                <rect key="frame" x="270" y="285" width="60" height="30"/>
-                                <color key="backgroundColor" white="0.95452964469178081" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="选择城市"/>
-                                <connections>
-                                    <action selector="pickCity:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WLl-cy-Y4K"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择结果:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoZ-kF-JGg">
-                                <rect key="frame" x="263.5" y="256.5" width="73" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="KoZ-kF-JGg" firstAttribute="centerX" secondItem="KM7-pU-ckV" secondAttribute="centerX" id="1Eb-YF-fAD"/>
-                            <constraint firstItem="KM7-pU-ckV" firstAttribute="top" secondItem="KoZ-kF-JGg" secondAttribute="bottom" constant="8" id="8Xm-7J-1tu"/>
-                            <constraint firstItem="KoZ-kF-JGg" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Atd-1x-ScN"/>
-                            <constraint firstItem="KM7-pU-ckV" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="SSH-e9-3vw"/>
-                            <constraint firstItem="KM7-pU-ckV" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="WeU-yx-bZu"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="sgK-ly-Lqg"/>
-                    <connections>
-                        <outlet property="resultLabel" destination="KoZ-kF-JGg" id="aA1-Qa-JVf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

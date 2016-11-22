@@ -24,28 +24,72 @@ extension Province:BXProvince{
 }
 
 class ViewController: UIViewController {
-  @IBOutlet weak var resultLabel: UILabel!
+    let resultLabel =  UILabel()
+    let pickProvinceButton = UIButton(type: .system)
+    let pickCityButton = UIButton(type: .system)
+    let pickDistrictButton = UIButton(type: .system)
+    let selectCityButton = UIButton(type: .system)
+  
+  var allButtons: [(UIButton,String)]{
+    return [
+      (pickProvinceButton, "弹出省份选择"),
+      (pickCityButton, "弹出城市选择"),
+      (pickDistrictButton, "弹出地区选择"),
+      (selectCityButton, "全功能城市选择器"),
+    ]
+  }
+  
+  override func loadView() {
+    super.loadView()
+    view.addSubview(resultLabel)
+    resultLabel.translatesAutoresizingMaskIntoConstraints = false
+    resultLabel.pa_below(topLayoutGuide, offset: 32).install()
+    resultLabel.pa_centerX.install()
+   
+    var prevView: UIView = resultLabel
+    for (button, title) in allButtons{
+        view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(title, for: .normal)
+        button.pa_centerX.install()
+        button.pa_below(prevView, offset: 8).install()
+      button.addTarget(self, action: #selector(onButtonPressed), for: .touchUpInside)
+        prevView = button
+    }
+    
+  }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      title = "城市地区选择器"
+    }
+
+  func onButtonPressed(sender: UIButton){
+    switch sender {
+    case pickCityButton:
+      chooseCity{ (province, city) in
+          let addr = "\(province.name) \(city.name)"
+          self.resultLabel.text = addr
+      }
+    case pickDistrictButton:
+      chooseDistrict{ ( province, city, district) in
+          let addr = "\(province.name) \(city.name) \(district.name)"
+          self.resultLabel.text = addr
+      }
       
+    case selectCityButton:
+      selectCity{ (province,city) in
+          let addr = "\(province.name) \(city.name)"
+          self.resultLabel.text = addr
+      }
+    default:
+      break
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-  @IBAction func pickCity(sender: AnyObject) {
-    let provinces = readRegion()
-    let vc = BXCityPickerController<Province,City>()
-    vc.updateProvinces(provinces)
-    showViewController(vc, sender: self)
   }
-  
+
   
   func readRegion() -> [Province]{
-    let path = NSBundle.mainBundle().pathForResource("region", ofType: "json")
+    let path = Bundle.main.path(forResource: "region", ofType: "json")
     let content = try? String(contentsOfFile: path!)
     let json = JSON.parse(content!)
     return Province.arrayFrom(json["data"])

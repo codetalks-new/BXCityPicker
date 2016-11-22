@@ -18,11 +18,11 @@ import PinAuto
 // -CurrentCityHeaderView:v
 // title[l15,y](f15,cdt)
 
-public class CurrentCityHeaderView : UIView{
-  public let titleLabel = UILabel(frame:CGRectZero)
-  public let contentLabel = UILabel(frame:CGRectZero)
+open class CurrentCityHeaderView : UIView{
+  open let titleLabel = UILabel(frame:CGRect.zero)
+  open let contentLabel = UILabel(frame:CGRect.zero)
   
-  public lazy var divider:CAShapeLayer = {
+  open lazy var divider:CAShapeLayer = {
     let line = CAShapeLayer()
     self.layer.addSublayer(line)
     return line
@@ -34,7 +34,7 @@ public class CurrentCityHeaderView : UIView{
   }
   
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     commonInit()
   }
@@ -67,29 +67,29 @@ public class CurrentCityHeaderView : UIView{
     contentLabel.pa_trailing.eq(15).install()
     contentLabel.pa_centerY.install()
     
-    contentLabel.setContentHuggingPriority(200, forAxis: .Horizontal)
+    contentLabel.setContentHuggingPriority(200, for: .horizontal)
     
   }
   
   func setupAttrs(){
     titleLabel.textColor = UIColor(white: 0.6, alpha: 1.0)
-    titleLabel.font = UIFont.systemFontOfSize(15)
-    titleLabel.textAlignment = .Left
+    titleLabel.font = UIFont.systemFont(ofSize: 15)
+    titleLabel.textAlignment = .left
     titleLabel.text = "当前城市"
     
-    contentLabel.textColor = UIColor.darkTextColor()
-    contentLabel.font = UIFont.systemFontOfSize(15)
-    contentLabel.textAlignment = .Left
+    contentLabel.textColor = UIColor.darkText
+    contentLabel.font = UIFont.systemFont(ofSize: 15)
+    contentLabel.textAlignment = .left
     contentLabel.text = "正在定位..."
-    divider.backgroundColor = UIColor(white: 0.937, alpha: 1.0).CGColor
+    divider.backgroundColor = UIColor(white: 0.937, alpha: 1.0).cgColor
   }
   
-  public func updateContent(content:String){
+  open func updateContent(_ content:String){
     contentLabel.text = content
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
-    divider.frame = bounds.divide(1, fromEdge: CGRectEdge.MaxYEdge).slice.insetBy(dx: 10, dy: 0)
+    divider.frame = bounds.divided(atDistance: 1, from: CGRectEdge.maxYEdge).slice.insetBy(dx: 10, dy: 0)
   }
 }

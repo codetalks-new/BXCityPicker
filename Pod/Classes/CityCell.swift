@@ -17,8 +17,8 @@ import BXModel
 // -CityCell(m=SearchIndexItem):cc
 // name[e0,h30](f15,cdt)
 
-public class CityCell : UICollectionViewCell,BXBindable {
-  let nameLabel = UILabel(frame:CGRectZero)
+open class CityCell : UICollectionViewCell,BXBindable {
+  let nameLabel = UILabel(frame:CGRect.zero)
   
   
   public override init(frame: CGRect) {
@@ -26,11 +26,11 @@ public class CityCell : UICollectionViewCell,BXBindable {
     commonInit()
   }
   
-  public func bind(item:BXCity){
+  open func bind(_ item:BXCity){
     nameLabel.text  = item.name
   }
   
-  override public func awakeFromNib() {
+  override open func awakeFromNib() {
     super.awakeFromNib()
     commonInit()
   }
@@ -62,17 +62,17 @@ public class CityCell : UICollectionViewCell,BXBindable {
   }
   
   func setupAttrs(){
-    nameLabel.textColor = UIColor.darkTextColor()
-    nameLabel.font = UIFont.systemFontOfSize(14)
+    nameLabel.textColor = UIColor.darkText
+    nameLabel.font = UIFont.systemFont(ofSize: 14)
     nameLabel.minimumScaleFactor = 11.0 / 14.0
-    nameLabel.textAlignment = .Center
-    backgroundColor = .whiteColor()
+    nameLabel.textAlignment = .center
+    backgroundColor = .white
     layer.cornerRadius = 2
   }
   
-  public override var highlighted: Bool{
+  open override var isHighlighted: Bool{
     didSet{
-      backgroundColor = highlighted ? UIColor(white: 0.912, alpha: 1.0): UIColor.whiteColor()
+      backgroundColor = isHighlighted ? UIColor(white: 0.912, alpha: 1.0): UIColor.white
     }
   }
   

@@ -24,8 +24,8 @@ class Province:BXModel {
     self.city = City.arrayFrom(json["city"])
   }
   
-  func toDict() -> [String:AnyObject]{
-    var dict : [String:AnyObject] = [ : ]
+  func toDict() -> [String:Any]{
+    var dict : [String:Any] = [ : ]
     dict["id"] = self.id
     dict["name"] = self.name
     dict["city"] = self.city.map{ $0.toDict() }
