@@ -12,7 +12,7 @@ import SwiftyJSON
 import BXModel
 //Province(tos,eq,hash,public):
 //name;code;pinyin;City:[r
-public   struct Province :BXModel{
+public   struct Province :BXModel,RegionInfo{
   public   let name : String
   public   let code : String
   public   let pinyin : String

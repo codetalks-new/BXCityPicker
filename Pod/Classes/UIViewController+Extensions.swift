@@ -9,6 +9,25 @@
 import UIKit
 import BXForm
 
+let pinyinSet: CharacterSet = {
+  let lowerRange = UnicodeScalar("a")...UnicodeScalar("z")
+  return CharacterSet(charactersIn: lowerRange)
+}()
+
+
+extension String{
+  var isPinyin:Bool{
+    for unicodeScalar in unicodeScalars{
+      if pinyinSet.contains(unicodeScalar){
+        continue
+      }else{
+        return false
+      }
+    }
+    return true
+  }
+}
+
 extension Province:ParentPickerItem{
   
 }
@@ -27,12 +46,35 @@ extension Province: BXProvince{
   public func cityList() -> [City] {
     return children
   }
+  
+  public func search(city:String) -> [City]{
+    let text = city.lowercased()
+    if text.isPinyin{
+      return  children.filter{ $0.pinyinAbbr.contains(text) }
+    }else{
+      return children.filter{ $0.name.contains(text) }
+    }
+  }
 }
 
 public extension UIViewController{
   
+  public typealias OnSelectedProvinceHandler = (Province) -> Void
   public typealias OnSelectedCityHandler = (Province, City) -> Void
   public typealias OnSelectedDistrictHandler = (Province, City, District) -> Void
+  
+  public func chooseProvince(handler onSelectHandler: @escaping OnSelectedProvinceHandler){
+    let provinces = loadLocalProvinces()
+    chooseProvince(provinces: provinces, handler: onSelectHandler)
+  }
+ 
+  public func chooseProvince(provinces:[Province],handler onSelectHandler: @escaping OnSelectedProvinceHandler){
+    let controller = SelectPickerController(options: provinces)
+    controller.onSelectOption = { p in
+      onSelectHandler(p)
+    }
+    present(controller, animated: true, completion: nil)
+  }
   
   
   public func chooseCity(handler onSelectHandler: @escaping OnSelectedCityHandler){

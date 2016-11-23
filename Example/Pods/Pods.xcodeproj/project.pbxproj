@@ -51,6 +51,7 @@
 		3E136FBDFAC71E49FBD957AFF5AABFE0 /* BXCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BEEDEB8F301BDE8D5145430325AF4F /* BXCity.swift */; };
 		3E7A722AE32FAAB74C3B3419B865FE34 /* SimpleGenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57E9C8BFF86D52763F77946A3DF7A9 /* SimpleGenericTableViewController.swift */; };
 		3EA9446F1DE43D5F00B13416 /* DistrictPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9446E1DE43D5F00B13416 /* DistrictPickerController.swift */; };
+		3EA944711DE522D600B13416 /* RegionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA944701DE522D600B13416 /* RegionInfo.swift */; };
 		3F8671FF204020A2DF31120E83FA3FF2 /* AutoBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27501FBAF352173E75FADA8BD178E1 /* AutoBind.swift */; };
 		3FAF12D8E591335FC8B5AA807E0EE174 /* OtherCityHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977549D076BF42BF039E10BF14DC8574 /* OtherCityHeaderView.swift */; };
 		41AB67547E00FEE26804E8604A67E8C0 /* StaticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B802CE1780F6EA6B31F9679C7EAC5 /* StaticTableViewCell.swift */; };
@@ -398,6 +399,7 @@
 		3CB73F63174C0CBF6689F5879BD43718 /* PinAuto-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PinAuto-prefix.pch"; sourceTree = "<group>"; };
 		3E7D952FD0614EBEC2CB7B4B43989818 /* FormColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormColors.swift; path = Pod/Classes/Config/FormColors.swift; sourceTree = "<group>"; };
 		3EA9446E1DE43D5F00B13416 /* DistrictPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictPickerController.swift; sourceTree = "<group>"; };
+		3EA944701DE522D600B13416 /* RegionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionInfo.swift; sourceTree = "<group>"; };
 		41979B61A6A1C22D51D50229F71FEF59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		42EAA892A6FE7519F5D0EBAD1D34493A /* City.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4316E7FF43201F6AB4E7E2CEB7469F2A /* Dollar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dollar-dummy.m"; sourceTree = "<group>"; };
@@ -1066,6 +1068,7 @@
 				A3643197A28469B20173DD38A38E309B /* ProvinceSectionHeaderView.swift */,
 				1F2C4BF75D538914066961D1562AC3FE /* SearchResultCell.swift */,
 				5C0B70EBA1AC8F11D6C2E37E15FFB115 /* UIViewController+Extensions.swift */,
+				3EA944701DE522D600B13416 /* RegionInfo.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1486,6 +1489,7 @@
 				E0A5CD6979C0EE7E2A834C5D46799104 /* ProvinceSectionHeaderView.swift in Sources */,
 				22A134AFD3E831C212DA7EE378387B14 /* SearchResultCell.swift in Sources */,
 				AA107203076B80AA088F7681B08B4ED4 /* UIViewController+Extensions.swift in Sources */,
+				3EA944711DE522D600B13416 /* RegionInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

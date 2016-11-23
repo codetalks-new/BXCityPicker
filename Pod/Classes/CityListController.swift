@@ -308,6 +308,18 @@ open class CityListController<P:BXProvince> : UIViewController,UISearchResultsUp
       searchResultsController.updateItems(items)
     }
   }
+ 
+  func queryCityListByText(_ text:String) -> [C]{
+    var list :[C] = []
+    for p in provinces{
+      let cities = p.search(city: text)
+      if !cities.isEmpty{
+        list.append(contentsOf: cities)
+      }
+    }
+    return list
+  }
+  
   
   //MARK: Locate Support
   let locationManager = CLLocationManager()
@@ -445,19 +457,7 @@ extension CityListController{
     return nil
   }
   
-  func queryCityListByText(_ text:String) -> [C]{
-    var list :[C] = []
-    for p in provinces{
-      for c in p.cityList(){
-        let city = c as! C
-        if city.name.contains(text){
-          list.append(city)
-        }
-      }
-    }
-    return list
-  }
-  
+
 
 }
 

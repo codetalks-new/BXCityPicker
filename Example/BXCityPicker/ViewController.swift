@@ -12,17 +12,6 @@ import BXCityPicker
 
 
 
-extension City:BXCity{
-}
-
-extension Province:BXProvince{
-  typealias CityType = City
-  func cityList() -> [City]{
-    return self.city
-  }
-
-}
-
 class ViewController: UIViewController {
     let resultLabel =  UILabel()
     let pickProvinceButton = UIButton(type: .system)
@@ -66,6 +55,11 @@ class ViewController: UIViewController {
 
   func onButtonPressed(sender: UIButton){
     switch sender {
+    case pickProvinceButton:
+      chooseProvince{ province in
+          let addr = "\(province.name)"
+          self.resultLabel.text = addr
+      }
     case pickCityButton:
       chooseCity{ (province, city) in
           let addr = "\(province.name) \(city.name)"

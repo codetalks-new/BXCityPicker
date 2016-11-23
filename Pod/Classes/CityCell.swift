@@ -63,8 +63,8 @@ open class CityCell : UICollectionViewCell,BXBindable {
   
   func setupAttrs(){
     nameLabel.textColor = UIColor.darkText
-    nameLabel.font = UIFont.systemFont(ofSize: 14)
-    nameLabel.minimumScaleFactor = 11.0 / 14.0
+    nameLabel.font = UIFont.systemFont(ofSize: 13)
+    nameLabel.minimumScaleFactor = 10.0 / 13.0
     nameLabel.textAlignment = .center
     backgroundColor = .white
     layer.cornerRadius = 2
