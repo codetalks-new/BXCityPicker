@@ -21,7 +21,7 @@ import PinAuto
 // otherCityHeader[hor0,t0,h44]
 // _[hor0,b0,t0]:c
 
-open class CityListController<P:BXProvince> : UIViewController,UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,CLLocationManagerDelegate where P.CityType: protocol<BXCity,Equatable>{
+open class CityListController<P:BXProvince> : UIViewController,UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,CLLocationManagerDelegate where P.CityType: BXCity & Equatable{
   typealias C = P.CityType
   open lazy var currentCityHeader :CurrentCityHeaderView  = {
     let header = CurrentCityHeaderView(frame:CGRect.zero)
@@ -368,7 +368,7 @@ extension CityListController{
   
   func cityAtIndexPath(_ indexPath:IndexPath) -> C{
     let cityList =  provinceAtSection((indexPath as NSIndexPath).section).cityList()
-    return cityList[(indexPath as NSIndexPath).row] as! C
+    return cityList[(indexPath as NSIndexPath).row] 
   }
 }
 
@@ -446,7 +446,7 @@ extension CityListController{
   func selectCityByName(_ name:String) -> (P, C)?{
     for p in provinces{
       for c in p.cityList(){
-        let city = c as! C
+        let city = c
         let c1 = city.name.replacingOccurrences(of: "市", with: "")
         let c2 = name.replacingOccurrences(of: "市", with: "")
         if c1 == c2{

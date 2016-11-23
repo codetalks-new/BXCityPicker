@@ -52,7 +52,6 @@ extension Province : CustomStringConvertible{
 
 public func loadLocalProvinces() -> [Province]{
     let mainBundle = Bundle.init(for: DistrictPickerController.classForCoder())
-    let resourceURL = mainBundle.resourcePath
     let resourceBundle = Bundle(path: mainBundle.bundlePath + "/BXCityPicker.bundle")
     if let jsonUrl = resourceBundle?.url(forResource: "area", withExtension: "json"){
       if let content = try? String(contentsOf:jsonUrl, encoding: String.Encoding.utf8) {
