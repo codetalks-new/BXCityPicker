@@ -104,7 +104,8 @@ public extension UIViewController{
     vc.onSelectCityBlock = { (p,city) in
       onSelectHandler(p,city)
     }
-    present(vc, animated: true, completion: nil)
+    show(vc, sender: self)  
+//    present(vc, animated: true, completion: nil)
   }
   
   public func chooseDistrict(handler onSelectHandler:@escaping OnSelectedDistrictHandler){

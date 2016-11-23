@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     let pickCityButton = UIButton(type: .system)
     let pickDistrictButton = UIButton(type: .system)
     let selectCityButton = UIButton(type: .system)
+    let selectCityNoSearchButton = UIButton(type: .system)
   
   var allButtons: [(UIButton,String)]{
     return [
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
       (pickCityButton, "弹出城市选择"),
       (pickDistrictButton, "弹出地区选择"),
       (selectCityButton, "全功能城市选择器"),
+      (selectCityNoSearchButton, "全功能城市选择器(去掉搜索)"),
     ]
   }
   

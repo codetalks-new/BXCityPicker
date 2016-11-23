@@ -179,8 +179,8 @@ open class CityListController<P:BXProvince> : UIViewController,UISearchResultsUp
   open var onSelectCityBlock: ((P, C) -> Void)?
   
   func onSelectCity(province:P, city:C){
-    onSelectCityBlock?(province, city)
     dismiss()
+    onSelectCityBlock?(province, city)
   }
   
   // MARK: UICollectionViewDelegateFlowLayout
