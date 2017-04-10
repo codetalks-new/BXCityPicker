@@ -17,7 +17,7 @@ protocol RegionInfo {
 
 extension RegionInfo{
   var pinyinAbbr:String{
-    let compos = pinyin.split(delimiter: "_")
+    let compos = pinyin.components(separatedBy: "_")
     let chars = compos.flatMap{ $0.characters.first }
     return String(chars)
   }

@@ -80,7 +80,7 @@ open class DistrictPickerController: PickerController {
     picker.dataSource = self
     picker.showsSelectionIndicator = true
   
-    if plist.isNotEmpty{
+    if !plist.isEmpty{
       show(provinces: plist)
     }
     
@@ -108,7 +108,7 @@ open class DistrictPickerController: PickerController {
   func show(provinces:[Province]){
     plist = provinces
     picker.reloadComponent(0)
-    if let p = plist.first(){
+    if let p = plist.first{
       onSelectProvince(p)
     }
   }
